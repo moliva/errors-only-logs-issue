@@ -32,6 +32,9 @@ jobs:
           key: turbo-${{ runner.arch }}-${{ runner.os }}-${{ github.sha }}
           restore-keys: turbo-${{ runner.arch }}-${{ runner.os }}-
 
+      - name: Run turbo info
+        run: npx turbo info
+
       - name: Run tests
         run: npx turbo test --continue=always --log-order=grouped --output-logs=errors-only
 
