@@ -1,9 +1,9 @@
 {
-  "name": "pkg-b",
+  "name": "pkg-46",
   "type": "module",
   "scripts": {
-    "prebuild": "echo \"Executing pre-build step...\"",
-    "build": "echo \"Welcome to the Turboverse.\" > output-file.txt && cat output-file.txt",
+    "build": "echo \"Building at the speed of Turbo.\" > output-file.txt && cat output-file.txt",
+    "lint": "echo \"Linted!\"",
     "check-types": "echo \"Types checked!\"",
     "test": "node --test ./test/index.js"
   },

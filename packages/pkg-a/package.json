@@ -1,9 +1,11 @@
 {
   "name": "pkg-a",
+  "type": "module",
   "scripts": {
     "build": "echo \"Building at the speed of Turbo.\" > output-file.txt && cat output-file.txt",
     "lint": "echo \"Linted!\"",
-    "check-types": "echo \"Types checked!\""
+    "check-types": "echo \"Types checked!\"",
+    "test": "node --test ./test/index.js"
   },
   "dependencies": {
     "tooling-config": "*"
