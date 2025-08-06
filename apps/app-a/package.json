@@ -10,6 +10,16 @@
   },
   "dependencies": {
     "pkg-a": "*",
+    "pkg-a1": "*",
+    "pkg-a2": "*",
+    "pkg-a3": "*",
+    "pkg-a4": "*",
+    "pkg-a5": "*",
+    "pkg-a6": "*",
+    "pkg-a7": "*",
+    "pkg-a8": "*",
+    "pkg-a9": "*",
+    "pkg-a10": "*",
     "tooling-config": "*"
   }
 }
