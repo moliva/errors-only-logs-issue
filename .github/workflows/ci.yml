@@ -1,0 +1,37 @@
+name: Build and Test
+
+on:
+  pull_request:
+    branches:
+      - "main"
+  push:
+    branches:
+      - "main"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: turbo-${{ runner.arch }}-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-${{ runner.arch }}-${{ runner.os }}-
+
+      - name: Run tests
+        run: npm run turbo test --continue=always --log-order=grouped --output-logs=errors-only
+
